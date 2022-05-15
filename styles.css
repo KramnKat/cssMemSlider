@@ -3,3 +3,65 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+body {
+	background-color: rgb(236, 236, 187);
+}
+
+.container {
+	display: grid;
+	grid-template-areas: 
+	"a a a"
+	"b b c";
+	width: 90vw;
+	height: 90vh;
+	margin: 5% auto 0;
+}
+
+input {
+	display: none;
+}
+
+.slider__images {
+	grid-area: a;
+	width: 60vh;
+}
+
+
+img {
+	display: none;
+}
+
+img.active {
+	display: block;
+}
+
+.slider__text {
+	grid-area: b;
+	display: flex;
+	justify-content: flex-start;
+	font-size: 1.5rem;
+	color:rgb(178, 65, 65)
+}
+
+span {
+	display: none;
+}
+
+span.active {
+	display: block;
+}
+
+.slider__buttons {
+	grid-area: c;
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+}
+
+.mems-checker__btn {
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 1rem;
+	border: 0.15rem solid rgb(178, 65, 65);
+}
