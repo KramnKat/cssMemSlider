@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,8 +7,9 @@
 }
 
 body {
-	background-color: rgb(236, 236, 187);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(123,224,240,0.7962535355939251) 0%, rgba(233,216,145,0.9054972330729166) 100%, rgba(0,212,255,1) 100%);
 	overflow: hidden;
+	font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -17,6 +20,10 @@ body {
 	width: 60vw;
 	height: 90vh;
 	margin: 3% auto 0;
+	background-color: rgba(244, 241, 230, 0.934);
+	border-radius: 1.5rem;
+	box-shadow: 0 0 5em rgb(228, 228, 124);
+	padding: 1rem;
 }
 
 input {
@@ -27,7 +34,7 @@ input {
 	grid-area: a;
 	overflow: hidden;
 	height: 75vh;
-	transition: .5s;
+	border-radius: 1.5rem;
 }
 
 .images__wrapper {
@@ -38,6 +45,7 @@ img {
 	display: block;
 	width: 100%;
 	height: calc(100% / 4);
+	transition: all .5s;
 }
 
 .slider__text {
@@ -48,12 +56,14 @@ img {
 	color:rgb(178, 65, 65)
 }
 
-span {
-	display: none;
+.text__wrapper {
+	height: 5vh;
+	overflow: hidden;
 }
 
-span.active {
+span {
 	display: block;
+	height: 100%;
 }
 
 .slider__buttons {
@@ -72,14 +82,19 @@ label {
 }
 .mems-checker__btn {
 	width: 1.5rem;
-	height: 1.5rem;
+	height: 0.7rem;
 	border-radius: 1rem;
-	border: 0.15rem solid rgb(178, 65, 65);
+	border: 0.12rem solid rgba(178, 65, 65, 0.567);
 	transition: .5s;
 }
 
 label:hover .mems-checker__btn {
 	background-color: rgb(238, 204, 159);
+}
+
+label:active .mems-checker__btn {
+	background-color: rgb(230, 163, 77);
+	transform: scale(0.9);
 }
 
 #first-mem:checked~.slider__buttons>label:nth-of-type(1) .mems-checker__btn {
@@ -113,4 +128,21 @@ label:hover .mems-checker__btn {
 
 #fourth-mem:checked~.slider__images>.images__wrapper>.active  {
 	margin-top: -225vh;
+}
+
+
+#first-mem:checked~.slider__text>.text__wrapper>.active {
+	margin-top: 0;
+}
+
+#second-mem:checked~.slider__text>.text__wrapper>.active  {
+	margin-top: -5vh;
+}
+
+#third-mem:checked~.slider__text>.text__wrapper>.active {
+	margin-top: -10vh;
+}
+
+#fourth-mem:checked~.slider__text>.text__wrapper>.active  {
+	margin-top: -15vh;
 }
