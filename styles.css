@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(123,224,240,0.7962535355939251) 0%, rgba(233,216,145,0.9054972330729166) 100%, rgba(0,212,255,1) 100%);
+	overflow: hidden;
+	font-family: 'Lato', sans-serif;
+}
+
+.container {
+	display: grid;
+	grid-template-areas: 
+	"a a a"
+	"b b c";
+	width: 60vw;
+	height: 90vh;
+	margin: 3% auto 0;
+	background-color: rgba(244, 241, 230, 0.934);
+	border-radius: 1.5rem;
+	box-shadow: 0 0 5em rgb(228, 228, 124);
+	padding: 1rem;
+}
+
+input {
+	display: none;
+}
+
+.slider__images {
+	grid-area: a;
+	overflow: hidden;
+	height: 75vh;
+	border-radius: 1.5rem;
+}
+
+.images__wrapper {
+	height: 400%;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: calc(100% / 4);
+	transition: all .5s;
+}
+
+.slider__text {
+	grid-area: b;
+	display: flex;
+	justify-content: flex-start;
+	font-size: 1rem;
+	color:rgb(178, 65, 65)
+}
+
+.text__wrapper {
+	height: 8vh;
+	overflow: hidden;
+}
+
+span {
+	display: block;
+	height: 100%;
+	transition: .3s;
+}
+
+.slider__buttons {
+	grid-area: c;
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.5rem;
+}
+
+label {
+	display: flex;
+	justify-content: center;
+	width: 1.9rem;
+	height: 1.9rem;
+	cursor: pointer;
+}
+.mems-checker__btn {
+	width: 1.5rem;
+	height: 0.7rem;
+	border-radius: 1rem;
+	border: 0.12rem solid rgba(178, 65, 65, 0.567);
+	transition: .5s;
+}
+
+label:hover .mems-checker__btn {
+	background-color: rgb(238, 204, 159);
+}
+
+label:active .mems-checker__btn {
+	background-color: rgb(230, 163, 77);
+	transform: scale(0.9);
+}
+
+#first-mem:checked~.slider__buttons>label:nth-of-type(1) .mems-checker__btn {
+	background-color: rgb(238, 204, 159);
+}
+
+#second-mem:checked~.slider__buttons>label:nth-of-type(2) .mems-checker__btn {
+	background-color: rgb(238, 204, 159);
+}
+
+#third-mem:checked~.slider__buttons>label:nth-of-type(3) .mems-checker__btn {
+	background-color: rgb(238, 204, 159);
+}
+
+#fourth-mem:checked~.slider__buttons>label:nth-of-type(4) .mems-checker__btn {
+	background-color: rgb(238, 204, 159);
+}
+
+
+#first-mem:checked~.slider__images>.images__wrapper>.active {
+	margin-top: 0;
+}
+
+#second-mem:checked~.slider__images>.images__wrapper>.active  {
+	margin-top: -75vh;
+}
+
+#third-mem:checked~.slider__images>.images__wrapper>.active {
+	margin-top: -150vh;
+}
+
+#fourth-mem:checked~.slider__images>.images__wrapper>.active  {
+	margin-top: -225vh;
+}
+
+#first-mem:checked~.slider__text>.text__wrapper>.active {
+	margin-top: 0;
+}
+
+#second-mem:checked~.slider__text>.text__wrapper>.active  {
+	margin-top: -8vh;
+}
+
+#third-mem:checked~.slider__text>.text__wrapper>.active {
+	margin-top: -16vh;
+}
+
+#fourth-mem:checked~.slider__text>.text__wrapper>.active  {
+	margin-top: -24vh;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		height: 70vh;
+		grid-template-areas: 
+		"a"
+		"c"
+		"b";
+		gap: 0.5rem;
+		margin: 10% auto 0;
+	}
+
+	.slider__buttons {
+		justify-content: center;
+	}
+
+	.slider__text {
+		font-size: 0.9rem;
+	}
+
+	.slider__images {
+		height: 55vh;
+	}
+
+	img {
+		width: 100%;
+		height: calc(100% / 4);
+	}
+
+	#first-mem:checked~.slider__images>.images__wrapper>.active {
+		margin-top: 0;
+	}
+	
+	#second-mem:checked~.slider__images>.images__wrapper>.active  {
+		margin-top: -55vh;
+	}
+	
+	#third-mem:checked~.slider__images>.images__wrapper>.active {
+		margin-top: -110vh;
+	}
+	
+	#fourth-mem:checked~.slider__images>.images__wrapper>.active  {
+		margin-top: -165vh;
+	}
+}
