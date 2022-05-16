@@ -52,18 +52,19 @@ img {
 	grid-area: b;
 	display: flex;
 	justify-content: flex-start;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	color:rgb(178, 65, 65)
 }
 
 .text__wrapper {
-	height: 5vh;
+	height: 8vh;
 	overflow: hidden;
 }
 
 span {
 	display: block;
 	height: 100%;
+	transition: .3s;
 }
 
 .slider__buttons {
@@ -130,19 +131,63 @@ label:active .mems-checker__btn {
 	margin-top: -225vh;
 }
 
-
 #first-mem:checked~.slider__text>.text__wrapper>.active {
 	margin-top: 0;
 }
 
 #second-mem:checked~.slider__text>.text__wrapper>.active  {
-	margin-top: -5vh;
+	margin-top: -8vh;
 }
 
 #third-mem:checked~.slider__text>.text__wrapper>.active {
-	margin-top: -10vh;
+	margin-top: -16vh;
 }
 
 #fourth-mem:checked~.slider__text>.text__wrapper>.active  {
-	margin-top: -15vh;
+	margin-top: -24vh;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		height: 70vh;
+		grid-template-areas: 
+		"a"
+		"c"
+		"b";
+		gap: 0.5rem;
+		margin: 10% auto 0;
+	}
+
+	.slider__buttons {
+		justify-content: center;
+	}
+
+	.slider__text {
+		font-size: 0.9rem;
+	}
+
+	.slider__images {
+		height: 55vh;
+	}
+
+	img {
+		width: 100%;
+		height: calc(100% / 4);
+	}
+
+	#first-mem:checked~.slider__images>.images__wrapper>.active {
+		margin-top: 0;
+	}
+	
+	#second-mem:checked~.slider__images>.images__wrapper>.active  {
+		margin-top: -55vh;
+	}
+	
+	#third-mem:checked~.slider__images>.images__wrapper>.active {
+		margin-top: -110vh;
+	}
+	
+	#fourth-mem:checked~.slider__images>.images__wrapper>.active  {
+		margin-top: -165vh;
+	}
 }
